@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:riverpod_management_app/services/database_service.dart';
 import 'package:riverpod_management_app/services/http_service.dart';
 
 import '../screens/home_screen.dart';
@@ -14,6 +15,10 @@ void main() async {
 Future<void> _setupServices() async {
   GetIt.instance.registerSingleton<HttpService>(
     HttpService(),
+  );
+
+  GetIt.instance.registerSingleton<DatabaseService>(
+    DatabaseService(),
   );
 }
 

@@ -45,7 +45,11 @@ class PokemonListTile extends ConsumerWidget {
               _favoritePokemonsProvider.addFavoritePokemon(pokemonUrl);
             }
           },
-          icon: const Icon(Icons.favorite_border),
+          icon: Icon(
+              _favoritePokemon.contains(pokemonUrl)
+                  ? Icons.favorite
+                  : Icons.favorite_border,
+              color: Colors.pink.withOpacity(.5)),
         ),
       ),
     );
